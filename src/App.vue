@@ -1,25 +1,28 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="glossy">
+    <q-header class="green-5">
       <q-toolbar>
-        <q-btn
+        <!-- <q-btn
           flat
           dense
           round
           @click="leftDrawerOpen = !leftDrawerOpen"
           aria-label="Menu"
           icon="fas fa-bars"
-        />
+        /> -->
 
         <q-toolbar-title>
-          Quasar App
+          Insta Blogs
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <!-- create onClick for buttons for login/sign up page -->
+          <q-btn outline rounded color="white" label="Sign Up" />
+          <q-btn outline rounded color="white" label="Login In" />
+        
       </q-toolbar>
     </q-header>
 
-    <q-drawer
+    <!-- <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
       bordered
@@ -73,10 +76,10 @@
           </q-item-section>
         </q-item>
       </q-list>
-    </q-drawer>
+    </q-drawer> -->
 
     <q-page-container>
-      <HelloWorld />
+      <!-- <HelloWorld /> -->
     </q-page-container>
   </q-layout>
 </template>
@@ -92,10 +95,10 @@ export default {
     HelloWorld
   },
 
-  setup () {
-    return {
-      leftDrawerOpen: ref(false)
-    }
-  }
+  // setup () {
+  //   return {
+  //     leftDrawerOpen: ref(false)
+  //   }
+  // }
 }
 </script>
