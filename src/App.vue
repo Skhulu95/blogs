@@ -2,103 +2,202 @@
   <q-layout view="lHh Lpr lFf">
     <q-header class="green-5">
       <q-toolbar>
-        <!-- <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          aria-label="Menu"
-          icon="fas fa-bars"
-        /> -->
+
 
         <q-toolbar-title>
           Insta Blogs
         </q-toolbar-title>
 
-        <!-- create onClick for buttons for login/sign up page -->
-          <q-btn outline rounded color="white" label="Sign Up" />
-          <q-btn outline rounded color="white" label="Login In" />
+       
+        <q-btn label="Sign Up" color="primary" @click="signup = true" />
+        <q-btn label="Login" color="primary" @click="login = true" />
         
       </q-toolbar>
     </q-header>
 
-    <!-- <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      class="bg-grey-2"
-    >
-      <q-list>
-        <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="fas fa-graduation-cap" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.com/quasarframework/">
-          <q-item-section avatar>
-            <q-icon name="fas fa-code" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="fas fa-comments" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="far fa-clipboard" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://twitter.com/quasarframework">
-          <q-item-section avatar>
-            <q-icon name="fab fa-twitter" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
-    </q-drawer> -->
 
-    <q-page-container>
-      <!-- <HelloWorld /> -->
-    </q-page-container>
+    <div>
+      <q-dialog
+          v-model="signup"
+          full-height
+        >
+          <q-card style="width: 700px; max-width: 80vw;">
+          <div class="q-pa-md" style="max-width: 400px">
+
+        <q-form
+          @submit="onSubmit"
+          @reset="onReset"
+          class="q-gutter-md"
+        >
+          <q-input
+            filled
+            v-model="name"
+            label="Your name *"
+            hint="Name and surname"
+            lazy-rules
+            :rules="[ val => val && val.length > 0 || 'Please type something']"
+          />
+
+          <q-input
+            filled
+            type="number"
+            v-model="signUpFields.age"
+            label="Your age *"
+            lazy-rules
+            :rules="[
+              val => val !== null && val !== '' || 'Please type your age',
+              val => val > 0 && val < 100 || 'Please type a real age'
+            ]"
+          />
+
+          <q-input
+            filled
+            v-model="signUpFields.email"
+            label="Your email *"
+            hint="johnd@gmail.com"
+            lazy-rules
+            :rules="[ val => val && val.length > 0 || 'Please type something']"
+          />
+
+          <q-input
+            filled
+            v-model="signUpFields.password"
+            label="Your password *"
+            lazy-rules
+            :rules="[ val => val && val.length > 0 || 'Please type something']"
+          />
+
+          <q-toggle v-model="signUpFields.accept" label="I accept the license and terms" />
+
+          <div>
+            <q-btn label="Submit" type="submit" color="primary"/>
+            <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+          </div>
+        </q-form>
+
+        </div>
+        </q-card>
+      </q-dialog>
+
+      <q-dialog
+      v-model="login"
+      full-height
+    >
+      <q-card style="width: 700px; max-width: 80vw;">
+      <div class="q-pa-md" style="max-width: 400px">
+
+    <q-form
+      @submit="onSubmit"
+      @reset="onReset"
+      class="q-gutter-md"
+    >
+      <q-input
+        filled
+        v-model="loginFields.email"
+        label="Your email *"
+        hint="jdoe@gmail.com"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Please type something']"
+      />
+
+      <q-input
+        filled
+        v-model="loginFields.password"
+        label="Your password *"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Please type something']"
+      />
+
+      <!-- <q-toggle v-model="loginFields.accept" label="I accept the license and terms" /> -->
+
+      <div>
+        <q-btn label="Login" type="submit" color="primary"/>
+      </div>
+    </q-form>
+
+  </div>
+      </q-card>
+    </q-dialog>
+      <router-view></router-view>
+    </div>
+    
   </q-layout>
 </template>
 
 <script>
 import { ref } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
+import Login from './components/Login'
+import SignUp from './components/SignUp'
 
 export default {
   name: 'LayoutDefault',
 
   components: {
-    HelloWorld
+    "Login":Login,
+    "Signup":SignUp
   },
-
-  // setup () {
-  //   return {
-  //     leftDrawerOpen: ref(false)
-  //   }
-  // }
+  data(){
+     return { 
+       name: null,
+       age: null,
+       email: null,
+       password: null,
+      //  modal: 
+      signUpFields: {
+        accept: false
+      },
+      loginFields: {
+        accept: false
+      },
+       
+    //   loggedIn: false
+     }
+  },
+  computed: {
+    signup: {
+      get(){
+        return this.$store.state.signup
+      },
+      set(value){
+        this.$store.commit("signUpModal", value)
+      }
+    },
+    login: {
+      get(){
+        return this.$store.state.login
+      },
+      set(value){
+        this.$store.commit("loginModal", value)
+      }
+    } 
+  },
+   methods: {
+    onSubmit () {
+      if (this.accept !== true) {
+        this.$q.notify({
+          color: 'red-5',
+          textColor: 'white',
+          icon: 'warning',
+          message: 'You need to accept the license and terms first'
+        })
+      }
+      else {
+        this.$q.notify({
+          color: 'green-4',
+          textColor: 'white',
+          icon: 'cloud_done',
+          message: 'Submitted'
+        })
+      }
+    },
+  onReset () {
+      this.name = null
+      this.age = null
+      this.email = null
+      this.password = null
+      this.accept = false
+    },
+}
 }
 </script>
