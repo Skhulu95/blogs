@@ -118,6 +118,9 @@
   </div>
       </q-card>
     </q-dialog>
+
+    </div>
+    <div>
       <router-view></router-view>
     </div>
     
@@ -126,7 +129,7 @@
 
 <script>
 import { ref } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
 
