@@ -40,18 +40,6 @@
 
           <q-input
             filled
-            type="number"
-            v-model="signUpFields.age"
-            label="Your age *"
-            lazy-rules
-            :rules="[
-              val => val !== null && val !== '' || 'Please type your age',
-              val => val > 0 && val < 100 || 'Please type a real age'
-            ]"
-          />
-
-          <q-input
-            filled
             v-model="signUpFields.email"
             label="Your email *"
             hint="johnd@gmail.com"
