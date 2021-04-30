@@ -8,8 +8,6 @@ import NotFound from '../views/NotFound.vue'
 import Profile from '../views/Profile'
 import Posts from '../views/Posts'
 import User from '../components/User.vue'
-import Details from '../views/Details.vue'
-import Create from '../views/Create.vue'
 
 const routes = [
   {
@@ -21,17 +19,6 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
-  },
-  {
-    path: '/create',
-    name: 'Create',
-    component: Create
-  },
-  {
-    path: '/posts/:id',
-    name: 'Details',
-    component: Details,
-    props: true
   },
   {
     path: '/signup',
