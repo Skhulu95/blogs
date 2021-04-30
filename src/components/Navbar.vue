@@ -16,40 +16,35 @@
         <q-route-tab to="/" label="Home" />
         <q-route-tab :to="{ name: 'About' }" label="About" />
         <q-route-tab :to="{ name: 'Blog' }" label="Blog" />
+        
+        <br />
       </q-tabs>
       <q-tabs align="right">
         <q-route-tab :to="{ name: 'SignUp' }" label="Sign Up" />
         <q-route-tab :to="{ name: 'Login' }" label="Sign In" />
-      </q-tabs>
-      <q-tabs align="center">
-        <button @click="redirect">Redirect</button>
-      <button @click="back">Go back</button>
-      <button @click="forward">Go forward</button>
+        
+        <br />
       </q-tabs>
       
+      <button @click="redirect">Redirect</button>
+      <button @click="back">Go back</button>
+      <button @click="forward">Go forward</button>
     </q-header>
     
-    <q-page-container>
+   <!-- <q-page-container>
       <router-view />
-      <!-- place QPageScroller at end of page -->
+       place QPageScroller at end of page 
           <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
             <q-btn fab icon="keyboard_arrow_up" color="accent" />
           </q-page-scroller>
-    </q-page-container>
+    </q-page-container> -->
 
   </q-layout>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      slide: 1,
-      autoplay: false,
-      left: false
-    }
-  },
-   methods: {
+    methods: {
     redirect() {
       this.$router.push({ name: 'Home' })
     },
@@ -64,16 +59,5 @@ export default {
 </script>
 
 <style>
-body{
-  background: #79797925;
-}
-.landing-title {
-  padding: 1em;
-  margin: 1em auto;
-  text-align: center;
-}
 
-.q-btn a.router-link-exact-active {
-  color: white;
-}
 </style>

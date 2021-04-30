@@ -1,5 +1,7 @@
 <template>
-  <div class="landing-title">
+   <q-layout view="lHh Lpr lFf">
+   <q-page-container>
+   <div class="landing-title">
    <h2>Welcome to Insta Blogs</h2>
   </div>
 <div class="q-pa-md">
@@ -43,6 +45,8 @@
       </template>
     </q-carousel>
   </div>
+    </q-page-container>
+  </q-layout>
 </template>
 
 <script>
