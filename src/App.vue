@@ -11,9 +11,9 @@
         <q-btn color="primary"><router-link :to="{ name: 'SignUp' }">SignUp</router-link></q-btn>
         <q-btn color="primary"><router-link :to="{ name: 'Login' }">Login</router-link></q-btn>  
       </q-toolbar>
-      <button @click="redirect">Redirect</button>
+      <!-- <button @click="redirect">Redirect</button>
       <button @click="back">Go back</button>
-      <button @click="forward">Go forward</button>
+      <button @click="forward">Go forward</button> -->
     </q-header>
     <router-view/>
   </q-layout>
@@ -49,5 +49,6 @@ export default {
   padding: 10px;
   border: none;
   border-radius: 4px;
+  text-decoration: none;
 }
 </style>
