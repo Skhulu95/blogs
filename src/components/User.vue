@@ -1,14 +1,19 @@
-<!-- /src/layouts/User.vue -->
 <template>
-  <q-layout>
-    ...
-<h1>USER</h1>
-    <!-- this is where the Pages are injected -->
-    <Posts />
-    <q-page-container>
-      <router-view></router-view>
-    </q-page-container>
-
-    ...
-  </q-layout>
+  <q-page class="column" padding>
+    <h5 class="text-center">The is the user's page</h5>
+    <div class="q-px-lg text-center">
+    <router-view/>
+      <q-btn style="width: 100%; max-width:50em; margin: 0 auto" color="primary" label="Logout" />
+    </div>
+  </q-page>
 </template>
+
+<script>
+import { mapActions } from 'vuex'
+export default {
+  name: 'UserPage',
+  // methods: {
+  //   ...mapActions('auth', ['logoutUser'])
+  // }
+}
+</script>

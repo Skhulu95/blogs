@@ -21,12 +21,6 @@
         <q-route-tab :to="{ name: 'SignUp' }" label="Sign Up" />
         <q-route-tab :to="{ name: 'Login' }" label="Sign In" />
       </q-tabs>
-      <q-tabs align="center">
-        <button @click="redirect">Redirect</button>
-      <button @click="back">Go back</button>
-      <button @click="forward">Go forward</button>
-      </q-tabs>
-      
     </q-header>
     
     <q-page-container>

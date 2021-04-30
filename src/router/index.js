@@ -36,7 +36,7 @@ const routes = [
     children: [
       // Profile page
       {
-        path: 'profile', // here it is, route /user/profile
+        path: '/profile', // here it is, route /user/profile
         component: Profile // we reference /src/pages/Profile.vue imported above
       },
 
@@ -47,6 +47,7 @@ const routes = [
       }
     ]
   },
+  
   {
     path: '/about',
     name: 'About',
