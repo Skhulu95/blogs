@@ -93,12 +93,17 @@ body{
   justify-content: space-evenly;
   max-width: 33.33%;
   box-shadow: darkslategray;
-  border:2px solid darkslategray;
+  /* border:2px solid darkslategray; */
 }
 .blogs .content img{
   justify-content: center;
   text-align: center;
   justify-items: center;
 }
+.content-card p{
+  padding: 2em;
+  justify-content: center;
+}
+
 
 </style>
