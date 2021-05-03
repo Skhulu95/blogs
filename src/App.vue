@@ -7,7 +7,7 @@
         </q-toolbar-title>
         <q-btn color="primary"><router-link to="/">Home</router-link></q-btn>
         <!-- <q-btn color="primary"><router-link :to="{ name: 'About' }">About</router-link></q-btn> -->
-        <q-btn color="primary"><router-link :to="{ name: 'Blog' }">Blog</router-link></q-btn>
+        <q-btn color="primary"><router-link :to="{ name: 'Blog' }">Blogs</router-link></q-btn>
         <q-btn label="Sign Up" color="primary" @click="signup = true" />
         <q-btn label="Login" color="primary" @click="login = true" /> 
       </q-toolbar>
