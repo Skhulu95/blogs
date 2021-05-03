@@ -15,20 +15,17 @@
       <q-tabs align="left">
         <q-route-tab to="/" label="Home" />
         <q-route-tab :to="{ name: 'About' }" label="About" />
-        <q-route-tab :to="{ name: 'Blog' }" label="Blog" />
+        <q-route-tab :to="{ name: 'Posts' }" label="Posts" />
         
-        <br />
+        
       </q-tabs>
       <q-tabs align="right">
+      <q-route-tab :to="{ name: 'Create' }" label="Create Blog" />
         <q-route-tab :to="{ name: 'SignUp' }" label="Sign Up" />
         <q-route-tab :to="{ name: 'Login' }" label="Sign In" />
         
         <br />
       </q-tabs>
-      
-      <button @click="redirect">Redirect</button>
-      <button @click="back">Go back</button>
-      <button @click="forward">Go forward</button>
     </q-header>
     
    <!-- <q-page-container>
@@ -43,18 +40,8 @@
 </template>
 
 <script>
+import Create from '../views/Create.vue'
 export default {
-    methods: {
-    redirect() {
-      this.$router.push({ name: 'Home' })
-    },
-    back() {
-      this.$router.go(-1)
-    },
-    forward() {
-      this.$router.go(1)
-    }
-  }
 }
 </script>
 
