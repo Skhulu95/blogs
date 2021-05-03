@@ -4,6 +4,7 @@
   <div v-if="post" class="post">
     <h3>{{ post.title }}</h3>
     <p class="pre">{{ post.body }}</p>
+    <button @click="post.pop()">Delete Post</button>
   </div>
   <div v-else>
     <Spinner />

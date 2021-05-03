@@ -1,4 +1,4 @@
-<!-- /src/pages/Posts.vue -->
+<!-- /src/views/Posts.vue -->
 <template>
   <q-layout>
   
@@ -44,6 +44,8 @@ export default {
     max-width: 1200px;
     margin: 0 auto;
   }
+  .h1,h2,h3,h4,h5 {
+  color: black}
   .post p {
     color: #444;
     line-height: 1.5em;

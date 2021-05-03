@@ -24,5 +24,14 @@ export default {
 </script>
 
 <style>
-
+.post h3 {
+    display: inline-block;
+    position: relative;
+    font-size: 26px;
+    color: black;
+    max-width: 400px;
+}
+.post h3::before {
+    background: rgb(69, 69, 255);
+}
 </style>
