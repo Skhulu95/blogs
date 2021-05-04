@@ -8,7 +8,6 @@ import Details from '../views/Details.vue'
 import NotFound from '../views/NotFound.vue'
 import Posts from '../views/Posts.vue'
 import AdminPostList from '../views/AdminPostList.vue'
-import User from '../components/User.vue'
 
 const routes = [
   {
