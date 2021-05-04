@@ -192,7 +192,7 @@ export default {
       this.email = null
       this.password = null
       this.accept = false
-    },
+    }
   }
 }
 </script>
