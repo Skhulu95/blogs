@@ -6,7 +6,8 @@ import SignUp from '../views/SignUp'
 import Create from '../views/Create.vue'
 import Details from '../views/Details.vue'
 import NotFound from '../views/NotFound.vue'
-import Posts from '../views/Posts'
+import Posts from '../views/Posts.vue'
+import AdminPostList from '../views/AdminPostList.vue'
 import User from '../components/User.vue'
 
 const routes = [
@@ -24,6 +25,11 @@ const routes = [
     path: '/signup',
     name: 'SignUp',
     component: SignUp
+  },
+  {
+    path: '/admin/posts',
+    name: 'admin-post-list',
+    component: AdminPostList
   },
   {
     path: '/posts',

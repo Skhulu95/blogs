@@ -1,9 +1,7 @@
 <!-- /src/views/Posts.vue -->
 <template>
-  <q-layout>
-  
     <div class="post">
-    <h1> POSTS </h1>
+    <h1 class="all-blogs-title"> POSTS</h1>
     <div v-if="error">{{ error }}</div>
     <div v-if="posts.length" class="layout">
       <PostList :posts="posts" />
@@ -14,7 +12,6 @@
       <Spinner />
     </div>
   </div>
-  </q-layout>
 </template>
 
 <script>
@@ -40,18 +37,5 @@ export default {
 </script>
 
 <style scoped>
-  .post {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .h1,h2,h3,h4,h5 {
-  color: black}
-  .post p {
-    color: #444;
-    line-height: 1.5em;
-    margin-top: 40px;
-  }
-  .pre {
-    white-space: pre-wrap;
-  }
+  
 </style>

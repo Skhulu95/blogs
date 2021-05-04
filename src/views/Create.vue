@@ -1,5 +1,4 @@
 <template>
-<q-layout view="hHh lpR fFf">
 <q-page-content>
 <div class="create">
     <form @submit.prevent="handleSubmit">
@@ -20,7 +19,6 @@
     </form>
   </div>
 </q-page-content>
-  </q-layout>
   
 </template>
 
@@ -72,7 +70,7 @@ setup() {
 
 <style>
   form {
-    max-width: 480px;
+    max-width: 780px;
     margin: 0 auto;
     text-align: left;
   }
@@ -104,7 +102,7 @@ setup() {
     position: absolute;
     z-index: -1;
     padding-right: 40px;
-    left: -30px;
+    left: -5px;
     transform: rotateZ(-1.5deg);
   }
   button {

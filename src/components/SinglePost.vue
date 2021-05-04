@@ -1,14 +1,24 @@
 <template>
-  <div class="post">
-    <router-link :to="{ name: 'Details', params: { id: post.id }}">
-      <h3>{{ post.title }}</h3>
-    </router-link>
-      
-    <p>{{ snippet }}</p>
-    <span v-for="tag in post.tags" :key="tag">
+  <q-card class="my-card">
+  <router-link :to="{ name: 'Details', params: { id: post.id }}">
+      <q-img
+        src="https://colmanandcompany.com/blog/wp-content/uploads/2014/04/blog-word-cloud1.jpg"
+        basic
+      >
+        <div class="absolute-bottom text-h6">
+          {{ post.title }}
+        </div>
+      </q-img>
+  </router-link>
+
+      <q-card-section>
+        <p>{{ snippet }}</p>
+        <h6><span v-for="tag in post.tags" :key="tag">
       #{{ tag }}
-    </span>
-  </div>
+    </span></h6>
+      </q-card-section>
+    </q-card>
+    <br />
 </template>
 
 <script>
@@ -27,6 +37,10 @@ export default {
 </script>
 
 <style>
+.my-card {
+   width: 100%;
+  max-width: 250px;
+}
   .post {
     margin: 0 40px 30px;
     padding-bottom: 30px;
@@ -40,16 +54,28 @@ export default {
     margin-bottom: 10px;
     max-width: 400px;
   }
-  .post h3::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: #ff8800;
-    position: absolute;
-    z-index: -1;
-    padding-right: 40px;
-    left: -30px;
-    transform: rotateZ(-1deg);
-  }
+  .blogs{
+  background: #d8e2e2b0;
+  height: fit-content;
+  padding:1em;
+  margin:10px auto;
+  /* take out */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.blogs .content-card{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 33%;
+  box-shadow: darkslategray;
+  border:2px solid darkslategray;
+}
+.blogs .content img{
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+}
 </style>

@@ -1,14 +1,17 @@
 <template>
-<q-layout>
+<div class="details">
 <div v-if="error">{{ error }}</div>
   <div v-if="post" class="post">
     <h3>{{ post.title }}</h3>
     <p class="pre">{{ post.body }}</p>
-    <button @click="post.pop()">Delete Post</button>
+    <button id="delete">Delete Post</button>
+    
   </div>
   <div v-else>
     <Spinner />
-  </div></q-layout>
+  </div>
+</div>
+
   
 </template>
 
@@ -36,16 +39,10 @@ export default {
 </script>
 
 <style scoped>
-  .post {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .post p {
-    color: #444;
-    line-height: 1.5em;
-    margin-top: 40px;
-  }
-  .pre {
-    white-space: pre-wrap;
-  }
+h1,h2,h3,h4,h5,h6 {
+  background-color: black;
+}
+  
+  #delete {
+  background-color: red;}
 </style>

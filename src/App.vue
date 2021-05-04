@@ -1,8 +1,10 @@
 <template>
-  <q-layout view="hHh lpR fFf">
-    <Navbar />
+<div class="q-layout q-layout--standard" style="min-height: 141px">
+<Navbar />
     <router-view />
-  </q-layout>
+    </div>
+    
+  
 </template>
 
 <script>
