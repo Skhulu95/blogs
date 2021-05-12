@@ -17,10 +17,67 @@
     </q-header>
     <router-view/>
 
+
     <!-- sign up form -->
 <div class="q-pa-md q-gutter-sm">
    <q-dialog
       v-model="signup"
+
+
+    <div>
+      <q-dialog
+          v-model="signup"
+          full-height
+        >
+          <q-card style="width: 700px; max-width: 80vw;">
+          <div class="q-pa-md" style="max-width: 400px">
+
+        <q-form
+          @submit="onSubmit"
+          @reset="onReset"
+          class="q-gutter-md"
+        >
+          <q-input
+            filled
+            v-model="name"
+            label="Your name *"
+            hint="Name and surname"
+            lazy-rules
+            :rules="[ val => val && val.length > 0 || 'Please type something']"
+          />
+
+          <q-input
+            filled
+            v-model="signUpFields.email"
+            label="Your email *"
+            hint="johnd@gmail.com"
+            lazy-rules
+            :rules="[ val => val && val.length > 0 || 'Please type something']"
+          />
+
+          <q-input
+            filled
+            v-model="signUpFields.password"
+            label="Your password *"
+            lazy-rules
+            :rules="[ val => val && val.length > 0 || 'Please type something']"
+          />
+
+          <q-toggle v-model="signUpFields.accept" label="I accept the license and terms" />
+
+          <div>
+            <q-btn label="Submit" type="submit" color="primary"/>
+            <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+          </div>
+        </q-form>
+
+        </div>
+        </q-card>
+      </q-dialog>
+
+      <q-dialog
+      v-model="login"
+
       full-height
     >
       <q-card class="column full-height" style="width: 300px">
